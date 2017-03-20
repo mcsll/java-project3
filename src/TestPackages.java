@@ -36,10 +36,28 @@ public class TestPackages
         }
         fileScan.close();
 
-        System.out.println(packetList.length);
-        System.out.println(counter);
-        System.out.println(Recursion.toString(packetList, counter-1));
-        Recursion.displayHeavyPackets(packetList, counter-1);
+        //System.out.println(packetList.length);
+        //System.out.println(counter);
+        System.out.println("ALL PACKETS");
+        System.out.println(Recursion.toString(packetList, counter));
 
+        System.out.println("ALL HEAVY PACKETS");
+        Recursion.displayHeavyPackets(packetList, counter);
+        System.out.println("");
+
+        System.out.println("ALL PACKETS with destination CT");
+        Recursion.displayPacketsToDest(packetList, counter, "CT");
+        System.out.println("");
+
+        System.out.println("The number of packets with destination CT is "
+                + Recursion.countPacketsToDest(packetList, counter, "CT")
+                + ".\n");
+
+        System.out.println("The packet object with max weight is: "
+                + Recursion.maxWeightPacket(packetList, counter).toString());
+
+        System.out.println("The max weight of all packets is "
+                + Recursion.maxWeight(packetList, counter)
+                + ".\n");
     }
 }
