@@ -29,6 +29,7 @@ public class Recursion
     public static void displayHeavyPackets(Packet[] list, int n)
     {
         if ( n >= 0 ) {
+            displayHeavyPackets(list, n-1);
             if ( list[n].isHeavy()){
                 System.out.print(list[n].toString());
             }

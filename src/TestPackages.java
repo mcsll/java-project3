@@ -39,6 +39,7 @@ public class TestPackages
         System.out.println(packetList.length);
         System.out.println(counter);
         System.out.println(Recursion.toString(packetList, counter-1));
+        Recursion.displayHeavyPackets(packetList, counter-1);
 
     }
 }
