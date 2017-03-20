@@ -7,8 +7,6 @@
 
 public class Recursion
 {
-    private Recursion(){}
-
     //-------------------------------------------------------------------------
     // Returns a String object that shows all Packets in the shipment
     //-------------------------------------------------------------------------

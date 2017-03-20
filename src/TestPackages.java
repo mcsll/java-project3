@@ -36,8 +36,6 @@ public class TestPackages
         }
         fileScan.close();
 
-        //System.out.println(packetList.length);
-        //System.out.println(counter);
         System.out.println("ALL PACKETS");
         System.out.println(Recursion.toString(packetList, counter));
 
