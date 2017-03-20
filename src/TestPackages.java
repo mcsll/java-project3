@@ -27,11 +27,7 @@ public class TestPackages
             i = fileScan.nextInt();
             w = fileScan.nextDouble();
             d = fileScan.next();
-
-            // Add new Packet object to packetList array
             packetList[counter] = new Packet(i, w, d);
-
-            // Increment packet counter
             counter++;
         }
         fileScan.close();
