@@ -36,7 +36,9 @@ public class TestPackages
         }
         fileScan.close();
 
-        //System.out.println(Recursion.toString(packetList, packetList.length));
+        System.out.println(packetList.length);
+        System.out.println(counter);
+        System.out.println(Recursion.toString(packetList, counter-1));
 
     }
 }

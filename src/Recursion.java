@@ -7,7 +7,7 @@
 
 public class Recursion
 {
-    public Recursion(){
+    private Recursion(){
 
     }
 
@@ -16,29 +16,26 @@ public class Recursion
     //-------------------------------------------------------------------------
     public static String toString(Packet[] list, int n)
     {
-
-
         if ( n == 0 ) {
             return list[n].toString();
         } else {
-            return list[n].toString() + toString(list, n-1);
+            return toString(list, n-1) + list[n].toString();
+        }
+    }
+
+    //-------------------------------------------------------------------------
+    // Prints all Packets in the shipment that are heavy
+    //-------------------------------------------------------------------------
+    public static void displayHeavyPackets(Packet[] list, int n)
+    {
+        if ( n >= 0 ) {
+            if ( list[n].isHeavy()){
+                System.out.print(list[n].toString());
+            }
         }
     }
 
 /*
-    //-------------------------------------------------------------------------
-    // Prints all Packets in the shipment that are heavy
-    //-------------------------------------------------------------------------
-    public void displayHeavyPackages()
-    {
-        for ( Packet temp : shipmentList )
-        {
-            if ( temp.isHeavy() )
-                System.out.print(temp.toString());
-        }
-    }
-
-
     //-------------------------------------------------------------------------
     // Prints all Packets in the shipment that are in-state
     //-------------------------------------------------------------------------
