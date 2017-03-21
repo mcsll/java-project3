@@ -20,10 +20,8 @@ public class TestPackages
         String d;
         int counter = 0;
 
-        // Open file with new Scanner object and read line into temp variables
         fileScan = new Scanner (new File("packetData.txt"));
-        while (fileScan.hasNext())
-        {
+        while (fileScan.hasNext()){
             i = fileScan.nextInt();
             w = fileScan.nextDouble();
             d = fileScan.next();

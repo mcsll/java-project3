@@ -8,7 +8,7 @@
 public class Recursion
 {
     //-------------------------------------------------------------------------
-    // Returns a String object that shows all Packets in the shipment
+    // Returns a String that shows all Packets in the shipment
     //-------------------------------------------------------------------------
     public static String toString(Packet[] list, int n)
     {
@@ -24,7 +24,9 @@ public class Recursion
     //-------------------------------------------------------------------------
     public static void displayHeavyPackets(Packet[] list, int n)
     {
-        if ( n > 0 ){
+        if ( n == 0 ){
+            return;
+        } else {
             displayHeavyPackets(list, n-1);
             if ( list[n-1].isHeavy() ){
                 System.out.print(list[n-1].toString());
@@ -33,11 +35,13 @@ public class Recursion
     }
 
     //-------------------------------------------------------------------------
-    // Prints all Packets to a specified destination
+    // Prints all Packets with a specified destination
     //-------------------------------------------------------------------------
     public static void displayPacketsToDest(Packet[] list, int n, String dest)
     {
-        if ( n > 0 ){
+        if ( n == 0 ){
+            return;
+        } else {
             displayPacketsToDest(list, n-1, dest);
             if ( list[n-1].getDestination().equals(dest) ){
                 System.out.print(list[n-1].toString());
@@ -69,7 +73,7 @@ public class Recursion
         if ( n == 1 ){
             return list[n-1];
         } else {
-            if ( maxWeightPacket(list, n-1).getWeight() > list[n-1].getWeight() ){
+            if (maxWeightPacket(list, n-1).getWeight() > list[n-1].getWeight()){
                 return list[n-2];
             } else {
                 return list[n-1];
@@ -78,14 +82,14 @@ public class Recursion
     }
 
     //-------------------------------------------------------------------------
-    // Returns weight of heaviest object in array
+    // Returns weight as double of heaviest object in array
     //-------------------------------------------------------------------------
     public static double maxWeight(Packet[] list, int n)
     {
         if ( n == 1 ){
             return list[n-1].getWeight();
         } else {
-            if ( maxWeightPacket(list, n-1).getWeight() > list[n-1].getWeight() ){
+            if (maxWeightPacket(list, n-1).getWeight() > list[n-1].getWeight()){
                 return list[n-2].getWeight();
             } else {
                 return list[n-1].getWeight();
